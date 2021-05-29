@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dicoding.jetpack.managerku">
+    package="com.bangkit.capstone.managerku">
 
     <application
         android:allowBackup="true"
@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Managerku">
-        <activity android:name=".ui.content.SettingActivity"></activity>
+        <activity android:name=".ui.content.SettingActivity"/>
         <activity android:name=".ui.content.login.VerifyActivity" />
         <activity android:name=".ui.content.login.SignUpActivity" />
         <activity android:name=".ui.content.login.LoginActivity" />
         <activity android:name=".ui.SplashActivity" />
-        <activity android:name=".ui.home.HomeActivity">
+        <activity android:name=".ui.home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

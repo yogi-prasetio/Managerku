@@ -1,4 +1,4 @@
-package com.dicoding.jetpack.managerku
+package com.bangkit.capstone.managerku
 
 import org.junit.Test
 

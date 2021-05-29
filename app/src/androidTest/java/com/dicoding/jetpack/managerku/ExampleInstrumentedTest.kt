@@ -1,4 +1,4 @@
-package com.dicoding.jetpack.managerku
+package com.bangkit.capstone.managerku
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.dicoding.jetpack.managerku", appContext.packageName)
+        assertEquals("com.bangkit.capstone.managerku", appContext.packageName)
     }
 }
