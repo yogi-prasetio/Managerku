@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Managerku</string>
+    <string name="slogan"><![CDATA[Simple & Easy to Use]]></string>
+    <string name="inventory_empty">There are no inventory</string>
+    <string name="product_empty">There are no product!</string>
+</resources>
