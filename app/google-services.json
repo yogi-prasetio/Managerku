@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "318889238725",
+    "project_id": "managerku-6e281",
+    "storage_bucket": "managerku-6e281.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318889238725:android:46dc4e4c8589bbbcddd0ac",
+        "android_client_info": {
+          "package_name": "com.bangkit.capstone.managerku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318889238725-8uajfog3ovoavraq5ta4mlhvrmt6fltj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFdvZ0JYdaytrvnvEUa0-XFQPKtz8OMHw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "318889238725-8uajfog3ovoavraq5ta4mlhvrmt6fltj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

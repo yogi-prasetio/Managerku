@@ -94,6 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:background="@drawable/login_button"
+        android:textColor="@color/white"
         android:text="LOG IN"
         android:fontFamily="@font/MontserratBold"
         android:textStyle="bold"
