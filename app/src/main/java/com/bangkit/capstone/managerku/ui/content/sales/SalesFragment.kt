@@ -6,10 +6,10 @@ import android.provider.Settings
 import android.view.*
 import androidx.fragment.app.Fragment
 import com.bangkit.capstone.managerku.R
-import com.bangkit.capstone.managerku.databinding.InventoryFragmentBinding
+import com.bangkit.capstone.managerku.databinding.SalesFragmentBinding
 
 class SalesFragment : Fragment() {
-    private var frgmntBinding: InventoryFragmentBinding? = null
+    private var frgmntBinding: SalesFragmentBinding? = null
     private val binding get() = frgmntBinding!!
 
     private lateinit var viewModel: SalesViewModel
@@ -20,7 +20,7 @@ class SalesFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        frgmntBinding = InventoryFragmentBinding.inflate(layoutInflater, container, false)
+        frgmntBinding = SalesFragmentBinding.inflate(layoutInflater, container, false)
         return frgmntBinding!!.root
     }
 

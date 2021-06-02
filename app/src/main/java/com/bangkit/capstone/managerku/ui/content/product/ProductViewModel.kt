@@ -23,10 +23,11 @@ class ProductViewModel (application: Application): AndroidViewModel(application)
         return dataDao?.getProduct()
     }
 
-    fun addProduct (id: Int, name: String, price: String){
+    fun addProduct (id: Int, image: String, name: String, price: String){
         CoroutineScope(Dispatchers.IO).launch {
             val product = ProductEntity(
                     id,
+                    image,
                     name,
                     price
             )

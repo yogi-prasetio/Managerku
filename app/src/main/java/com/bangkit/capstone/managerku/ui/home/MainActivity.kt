@@ -31,8 +31,7 @@ class MainActivity : AppCompatActivity() {
         val appBarConfiguration = AppBarConfiguration.Builder(
             R.id.dashboard_navigation,
             R.id.product_navigation,
-            R.id.scan_navigation,
-            R.id.inventory_navigation,
+            R.id.sales_navigation,
             R.id.profile_navigation
         ).build()
 
