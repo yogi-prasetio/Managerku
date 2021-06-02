@@ -9,21 +9,15 @@
     <item
         android:id="@+id/product_navigation"
         android:icon="@drawable/ic_product"
-        android:title="Product" />
-
-    <item
-        android:id="@+id/scan_navigation"
-        android:icon="@drawable/ic_qr_code"
-        android:title="Scan" />
+        android:title="Produk" />
 
     <item
         android:id="@+id/inventory_navigation"
         android:icon="@drawable/ic_inventory"
-        android:title="Inventory" />
+        android:title="Penjualan" />
 
     <item
         android:id="@+id/profile_navigation"
         android:icon="@drawable/ic_profile"
-        android:title="Profile" />
-
+        android:title="Profil" />
 </menu>

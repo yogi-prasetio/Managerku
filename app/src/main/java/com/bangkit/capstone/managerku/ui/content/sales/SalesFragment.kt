@@ -1,4 +1,4 @@
-package com.bangkit.capstone.managerku.ui.content.inventory
+package com.bangkit.capstone.managerku.ui.content.sales
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,11 +8,16 @@ import androidx.fragment.app.Fragment
 import com.bangkit.capstone.managerku.R
 import com.bangkit.capstone.managerku.databinding.InventoryFragmentBinding
 
-class InventoryFragment : Fragment() {
+class SalesFragment : Fragment() {
     private var frgmntBinding: InventoryFragmentBinding? = null
     private val binding get() = frgmntBinding!!
 
-    private lateinit var viewModel: InventoryViewModel
+    private lateinit var viewModel: SalesViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         frgmntBinding = InventoryFragmentBinding.inflate(layoutInflater, container, false)

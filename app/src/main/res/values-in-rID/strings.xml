@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">Managerku</string>
     <string name="slogan">Simpel dan mudah Digunakan</string>
-    <string name="inventory_empty">Tidak ada inventory!</string>
     <string name="product_empty">Tidak ada produk!</string>
+    <string name="sales_empty">Tidak ada penjualan!</string>
 </resources>

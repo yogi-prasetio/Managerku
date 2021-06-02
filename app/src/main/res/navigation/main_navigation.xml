@@ -15,15 +15,10 @@
         android:label="Product"
         tools:layout="@layout/product_fragment"/>
     <fragment
-        android:id="@+id/scan_navigation"
-        android:name="com.bangkit.capstone.managerku.ui.content.dashboard.DashboardFragment"
-        android:label="Scan"
-        tools:layout="@layout/product_fragment"/>
-    <fragment
-        android:id="@+id/inventory_navigation"
-        android:name="com.bangkit.capstone.managerku.ui.content.inventory.InventoryFragment"
-        android:label="Inventory"
-        tools:layout="@layout/inventory_fragment"/>
+        android:id="@+id/sales_navigation"
+        android:name="com.bangkit.capstone.managerku.ui.content.sales.SalesFragment"
+        android:label="Penjualan"
+        tools:layout="@layout/sales_fragment"/>
     <fragment
         android:id="@+id/profile_navigation"
         android:name="com.bangkit.capstone.managerku.ui.content.pofile.ProfileFragment"
