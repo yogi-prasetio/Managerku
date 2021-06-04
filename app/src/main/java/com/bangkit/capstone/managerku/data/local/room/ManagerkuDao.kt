@@ -20,4 +20,14 @@ interface ManagerkuDao {
 
     @Query("SELECT * FROM tbl_sales")
     fun getSales(): LiveData<List<SalesEntity>>
+
+//    @Insert
+//    suspend fun addUser(user: UserEntity)
+//
+//    @Update
+//    suspend fun updateUser(user: UserEntity)
+
+//    @Query("SELECT * FROM tbl_user")
+//    fun getUser(): LiveData<List<UserEntity>>
+
 }

@@ -7,22 +7,22 @@
     <fragment
         android:id="@+id/dashboard_navigation"
         android:name="com.bangkit.capstone.managerku.ui.content.dashboard.DashboardFragment"
-        android:label="Dashboard"
+        android:label="@string/dashboard"
         tools:layout="@layout/dashboard_fragment"/>
     <fragment
         android:id="@+id/product_navigation"
         android:name="com.bangkit.capstone.managerku.ui.content.product.ProductFragment"
-        android:label="Product"
+        android:label="@string/product"
         tools:layout="@layout/product_fragment"/>
     <fragment
         android:id="@+id/sales_navigation"
         android:name="com.bangkit.capstone.managerku.ui.content.sales.SalesFragment"
-        android:label="Penjualan"
+        android:label="@string/sales"
         tools:layout="@layout/sales_fragment"/>
     <fragment
         android:id="@+id/profile_navigation"
         android:name="com.bangkit.capstone.managerku.ui.content.pofile.ProfileFragment"
-        android:label="Profile"
+        android:label="@string/profile"
         tools:layout="@layout/profile_fragment"/>
 
 </navigation>

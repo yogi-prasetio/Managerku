@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Managerku</string>
     <string name="slogan">Simpel dan mudah Digunakan</string>
     <string name="product_empty">Tidak ada produk!</string>
     <string name="sales_empty">Tidak ada penjualan!</string>
+    <string name="product_name">Nama Product</string>
+    <string name="save">SIMPAN</string>
+    <string name="price">Harga</string>
+    <string name="add_data">Tambah Data</string>
+    <string name="product_quantity">Total Produk</string>
+    <string name="demand_prediction">Prediksi Permintaan</string>
+    <string name="quantity">Jumlah</string>
+    <string name="about">Tentang</string>
+    <string name="log_out">Keluar</string>
+    <string name="language_setting">Pengaturan Bahasa</string>
+    <string name="financial_management">Manajemen Keuangan</string>
+    <string name="what_s_next">Apa selanjutnya?</string>
+    <string name="change_password">Ubah Kata Sandi</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="product">Produk</string>
+    <string name="sales">Penjualan</string>
+    <string name="profile">Profil</string>
+    <string name="update">Edit</string>
+    <string name="phone_number">Nomor HP</string>
+    <string name="email">Email</string>
+    <string name="full_name">Nama Lengkap</string>
+    <string name="setting">Pengaturan</string>
+    <string name="add_product">Tambah Produk</string>
+    <string name="add_sales">Tambah Penjualan</string>
+    <string name="sales_count">Total Penjualan</string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/add"
-        android:icon="@drawable/ic_add"
+        android:title="@string/add_data"
         app:showAsAction="ifRoom"
         android:orderInCategory="1"
         tools:ignore="MenuTitle" />

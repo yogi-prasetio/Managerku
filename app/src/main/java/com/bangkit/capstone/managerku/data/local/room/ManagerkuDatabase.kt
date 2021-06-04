@@ -4,25 +4,38 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.bangkit.capstone.managerku.data.local.entity.ProductEntity
 import com.bangkit.capstone.managerku.data.local.entity.SalesEntity
 
-@Database(entities = [ProductEntity::class, SalesEntity::class], version = 1, exportSchema = false)
+@Database(entities = [ProductEntity::class, SalesEntity::class], version = 5, exportSchema = false)
 abstract class ManagerkuDatabase : RoomDatabase() {
     abstract fun managerkuDao(): ManagerkuDao
 
     companion object {
 
         @Volatile
-        private var INSTANCE: ManagerkuDao? = null
+        private var INSTANCE: ManagerkuDatabase? = null
+
+        val MIGRATION_1_2: Migration by lazy {
+            object : Migration(4,5) {
+                override fun migrate(database: SupportSQLiteDatabase) {
+                    // Since we didn't alter the table, there's nothing else to do here.
+                }
+            }
+        }
 
         fun getInstance(context: Context): ManagerkuDatabase =
-                (INSTANCE ?: synchronized(this) {
-                    INSTANCE ?: Room.databaseBuilder(
+                INSTANCE ?: synchronized(this) {
+                    Room.databaseBuilder(
                             context.applicationContext,
                             ManagerkuDatabase::class.java,
                             "managerku.db"
-                    ).build()
-                }) as ManagerkuDatabase
+                    ).fallbackToDestructiveMigration()
+                        .allowMainThreadQueries()
+                        .addMigrations(MIGRATION_1_2)
+                        .build().apply { INSTANCE = this }
+                }
     }
 }

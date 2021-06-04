@@ -20,6 +20,22 @@ class DashboardFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel.getAllProduct()?.observe(viewLifecycleOwner, {
+            if (it.size != null) {
+                binding.tvProductCount.text = it.size.toString()
+            } else {
+                binding.tvProductCount.text = "-"
+            }
+        })
+
+        viewModel.getAllSales()?.observe(viewLifecycleOwner, {
+            if (it.size != null) {
+                binding.tvSalesCount.text = it.size.toString()
+            } else {
+                binding.tvSalesCount.text = "-"
+            }
+        })
     }
 
     override fun onDestroyView() {

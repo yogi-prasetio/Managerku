@@ -7,23 +7,24 @@
     tools:context=".ui.content.sales.SalesFragment">
 
     <ImageView
-        android:id="@+id/icon"
+        android:id="@+id/notif_empty"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:src="@drawable/data_empty"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="14sp"
-        android:text="@string/product_empty"
-        app:layout_constraintTop_toBottomOf="@id/icon"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_sales"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/item_rows_data" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

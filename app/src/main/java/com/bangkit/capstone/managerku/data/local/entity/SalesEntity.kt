@@ -13,9 +13,13 @@ data class SalesEntity(
 
         @NonNull
         @ColumnInfo(name = "id_product")
-        val id_product: String,
+        val id_product: Int,
 
         @NonNull
-        @ColumnInfo(name = "sale")
-        val sale: String
+        @ColumnInfo(name = "qty")
+        val qty: Int,
+
+        @NonNull
+        @ColumnInfo(name = "tanggal")
+        val tanggal: String
 )
