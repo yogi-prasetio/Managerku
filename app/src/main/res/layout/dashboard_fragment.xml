@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="13"
-            android:textSize="42sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:layout_marginStart="24dp"
             android:layout_marginBottom="8dp"
@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="234"
-            android:textSize="42sp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:layout_marginStart="24dp"
             android:layout_marginBottom="8dp"
@@ -126,9 +126,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
+            android:hint="Data Prediction"
             android:textStyle="bold"
             android:layout_gravity="center"
-            tools:text="Data Prediction"
             tools:ignore="RtlSymmetry" />
 
     </androidx.cardview.widget.CardView>

@@ -3,13 +3,12 @@ package com.bangkit.capstone.managerku.ui.content
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import com.bangkit.capstone.managerku.R
 import com.bangkit.capstone.managerku.databinding.ActivitySettingBinding
+import com.bangkit.capstone.managerku.ui.content.about.AboutActivity
 import com.bangkit.capstone.managerku.ui.content.login.LoginActivity
 
-class SettingActivity : AppCompatActivity(), View.OnClickListener {
+class SettingActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySettingBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,24 +19,20 @@ class SettingActivity : AppCompatActivity(), View.OnClickListener {
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
 
-    override fun onClick(v: View) {
-        when(v.id) {
-            R.id.change_language -> {
-                Intent(Settings.ACTION_LOCALE_SETTINGS).also {
-                    startActivity(it)
-                }
+        binding.changeLanguage.setOnClickListener {
+            Intent(Settings.ACTION_LOCALE_SETTINGS).also {
+                startActivity(it)
             }
-            R.id.about -> {
-                Intent(Settings.ACTION_LOCALE_SETTINGS).also {
-                    startActivity(it)
-                }
+        }
+        binding.about.setOnClickListener {
+            Intent(this, AboutActivity::class.java).also {
+                startActivity(it)
             }
-            R.id.logout -> {
-                Intent(this, LoginActivity::class.java).also {
-                    startActivity(it)
-                }
+        }
+        binding.logout.setOnClickListener {
+            Intent(this, LoginActivity::class.java).also {
+                startActivity(it)
             }
         }
     }

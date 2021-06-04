@@ -3,7 +3,7 @@
     <string name="slogan"><![CDATA[Simple & Easy to Use]]></string>
     <string name="sales_empty">There are no sales!</string>
     <string name="product_empty">There are no product!</string>
-    <string name="product_name">" Product Name"</string>
+    <string name="product_name">Product Name</string>
     <string name="save">SAVE</string>
     <string name="price">Price</string>
     <string name="add_data">Add Data</string>

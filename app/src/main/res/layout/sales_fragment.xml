@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.content.sales.SalesFragment">
 
-    <ImageView
-        android:id="@+id/notif_empty"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@drawable/data_empty"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_sales"
         android:layout_width="0dp"
@@ -27,4 +16,31 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_rows_data" />
 
+    <FrameLayout
+        android:id="@+id/notif_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/img_empty_state"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:background="@drawable/empty_state"
+            android:layout_marginBottom="24dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/data_empty" />
+
+        <TextView
+            android:id="@+id/desc_empty_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:hint="Data is empty!"
+            android:layout_gravity="bottom|center_horizontal"/>
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

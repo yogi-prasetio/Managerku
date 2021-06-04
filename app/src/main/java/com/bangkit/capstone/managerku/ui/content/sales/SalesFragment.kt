@@ -3,6 +3,7 @@ package com.bangkit.capstone.managerku.ui.content.sales
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
+import android.view.View.VISIBLE
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -49,8 +50,7 @@ class SalesFragment : Fragment() {
                 if (it!=null) {
                     salesAdapter.setSales(it)
                 } else {
-                    binding.notifEmpty.visibility = View.VISIBLE
-                    binding.notifEmpty.contentDescription = resources.getString(R.string.sales_empty)
+                    emptyData()
                 }
             })
 
@@ -59,6 +59,13 @@ class SalesFragment : Fragment() {
                 setHasFixedSize(true)
                 adapter = salesAdapter
             }
+        }
+    }
+
+    private fun emptyData() {
+        binding.apply {
+            descEmptyState.text = resources.getString(R.string.sales_empty)
+            notifEmpty.visibility = VISIBLE
         }
     }
 

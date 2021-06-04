@@ -9,19 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Managerku">
-        <activity android:name=".ui.content.sales.AddSalesActivity"
+        <activity android:name=".ui.content.about.AboutActivity"></activity>
+        <activity
+            android:name=".ui.content.sales.AddSalesActivity"
+            android:parentActivityName=".ui.home.MainActivity"
+            android:theme="@style/Widget.MaterialComponents.Toolbar.Primary">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bangkit.capstone.managerku.ui.home.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.content.product.AddProductActivity"
             android:parentActivityName=".ui.home.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.bangkit.capstone.managerku.ui.home.MainActivity" />
         </activity>
-        <activity android:name=".ui.content.product.AddProductActivity"
-            android:parentActivityName=".ui.home.MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.bangkit.capstone.managerku.ui.home.MainActivity" />
-        </activity>
-        <activity android:name=".ui.content.SettingActivity"
+        <activity
+            android:name=".ui.content.SettingActivity"
             android:parentActivityName=".ui.home.MainActivity">
             <meta-data
                 android:name="android.support."
