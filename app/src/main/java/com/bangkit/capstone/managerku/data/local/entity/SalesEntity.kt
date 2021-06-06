@@ -20,6 +20,6 @@ data class SalesEntity(
         val qty: Int,
 
         @NonNull
-        @ColumnInfo(name = "tanggal")
-        val tanggal: String
+        @ColumnInfo(name = "date")
+        val date: String
 )

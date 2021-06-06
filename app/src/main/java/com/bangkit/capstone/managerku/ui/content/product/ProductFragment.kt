@@ -7,11 +7,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.capstone.managerku.R
+import com.bangkit.capstone.managerku.data.Repository
+import com.bangkit.capstone.managerku.data.local.room.ManagerkuDatabase
 import com.bangkit.capstone.managerku.databinding.ProductFragmentBinding
+import com.bangkit.capstone.managerku.viewmodel.ViewModelFactory
 
 class ProductFragment : Fragment() {
     private var frgmntBinding: ProductFragmentBinding? = null
     private val binding get() = frgmntBinding!!
+
+    lateinit var database: ManagerkuDatabase
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         frgmntBinding = ProductFragmentBinding.inflate(layoutInflater, container, false)
@@ -34,14 +39,17 @@ class ProductFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
+        database = context?.let { ManagerkuDatabase.getInstance(it) }!!
+        val repo = Repository(database)
+        val factory = ViewModelFactory(repo)
 
         setupRecyclerView()
 
         if (activity != null) {
-            val viewModel = ViewModelProvider(this)[ProductViewModel::class.java]
+            val viewModel = ViewModelProvider(this,  factory)[ProductViewModel::class.java]
             val productAdapter = ProductAdapter()
 
-            viewModel.getAllProduct()?.observe(viewLifecycleOwner, {
+            viewModel.getProduct()?.observe(viewLifecycleOwner, {
                 if (it!=null) {
                     productAdapter.setProduct(it)
                 } else {

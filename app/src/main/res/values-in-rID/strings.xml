@@ -28,4 +28,5 @@
     <string name="add_product">Tambah Produk</string>
     <string name="add_sales">Tambah Penjualan</string>
     <string name="sales_count">Total Penjualan</string>
+    <string name="sales_detail">Detail Penjualan</string>
 </resources>

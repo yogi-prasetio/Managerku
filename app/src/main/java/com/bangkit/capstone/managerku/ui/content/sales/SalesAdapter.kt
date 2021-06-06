@@ -1,16 +1,18 @@
 package com.bangkit.capstone.managerku.ui.content.sales
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bangkit.capstone.managerku.data.local.entity.SalesEntity
+import com.bangkit.capstone.managerku.data.local.entity.DataEntity
 import com.bangkit.capstone.managerku.databinding.ItemRowsDataBinding
+import com.bangkit.capstone.managerku.ui.content.sales.detail.DetailSalesActivity
 
 class SalesAdapter: RecyclerView.Adapter<SalesAdapter.SalesViewHolder>() {
-    private var listSales = ArrayList<SalesEntity>()
+    private var listSales = ArrayList<DataEntity>()
     
-    fun setSales(sales: List<SalesEntity>?) {
+    fun setSales(sales: List<DataEntity>?) {
         if (sales == null) return
         this.listSales.clear()
         this.listSales.addAll(sales)
@@ -31,14 +33,15 @@ class SalesAdapter: RecyclerView.Adapter<SalesAdapter.SalesViewHolder>() {
 
     class SalesViewHolder(private val binding: ItemRowsDataBinding): RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("WrongConstant")
-        fun bind(data: SalesEntity) {
+        fun bind(data: DataEntity) {
             with(binding) {
-                tvDataTitle.text = data.tanggal
+                tvDataTitle.text = data.date
+                tvDataPrice.text = data.qty.toString()
 
                 itemView.setOnClickListener {
-//                    val intent = Intent(itemView.context, DetailSalesActivity::class.java)
-//                    intent.putExtra(DetailSalesActivity.EXTRA_DATA, data.id)
-//                    itemView.context.startActivity(intent)
+                    val intent = Intent(itemView.context, DetailSalesActivity::class.java)
+                    intent.putExtra(DetailSalesActivity.EXTRA_DATA, data.date)
+                    itemView.context.startActivity(intent)
                 }
             }
         }

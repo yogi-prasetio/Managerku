@@ -4,16 +4,20 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Managerku">
-        <activity android:name=".ui.content.about.AboutActivity"></activity>
+        <activity android:name=".ui.content.sales.detail.DetailSalesActivity"
+            android:parentActivityName=".ui.home.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bangkit.capstone.managerku.ui.home.MainActivity" />
+        </activity>
         <activity
             android:name=".ui.content.sales.AddSalesActivity"
-            android:parentActivityName=".ui.home.MainActivity"
-            android:theme="@style/Widget.MaterialComponents.Toolbar.Primary">
+            android:parentActivityName=".ui.home.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.bangkit.capstone.managerku.ui.home.MainActivity" />
@@ -32,17 +36,16 @@
                 android:name="android.support."
                 android:value="com.bangkit.capstone.managerku.ui.profile.ProfileFragment" />
         </activity>
-        <activity android:name=".ui.content.login.VerifyActivity" />
         <activity android:name=".ui.content.login.SignUpActivity" />
         <activity android:name=".ui.content.login.LoginActivity" />
-        <activity android:name=".ui.SplashActivity" />
-        <activity android:name=".ui.home.MainActivity">
+        <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.home.MainActivity"/>
     </application>
 
 </manifest>

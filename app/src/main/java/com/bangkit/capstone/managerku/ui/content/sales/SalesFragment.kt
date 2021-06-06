@@ -8,13 +8,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bangkit.capstone.managerku.R
+import com.bangkit.capstone.managerku.data.Repository
+import com.bangkit.capstone.managerku.data.local.room.ManagerkuDatabase
 import com.bangkit.capstone.managerku.databinding.SalesFragmentBinding
-import com.bangkit.capstone.managerku.ui.content.product.ProductAdapter
+import com.bangkit.capstone.managerku.viewmodel.ViewModelFactory
 
 class SalesFragment : Fragment() {
     private var frgmntBinding: SalesFragmentBinding? = null
     private val binding get() = frgmntBinding!!
 
+    lateinit var database: ManagerkuDatabase
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         frgmntBinding = SalesFragmentBinding.inflate(layoutInflater, container, false)
         return frgmntBinding!!.root
@@ -36,14 +39,13 @@ class SalesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
-        setupRecyclerView()
-        observeSales()
-    }
 
-    private fun observeSales() {
+        database = context?.let { ManagerkuDatabase.getInstance(it) }!!
+        val repo = Repository(database)
+        val factory = ViewModelFactory(repo)
 
         if (activity != null) {
-            val viewModel = ViewModelProvider(this)[SalesViewModel::class.java]
+            val viewModel = ViewModelProvider(this, factory)[SalesViewModel::class.java]
             val salesAdapter = SalesAdapter()
 
             viewModel.getAllSales()?.observe(viewLifecycleOwner, {
@@ -66,13 +68,6 @@ class SalesFragment : Fragment() {
         binding.apply {
             descEmptyState.text = resources.getString(R.string.sales_empty)
             notifEmpty.visibility = VISIBLE
-        }
-    }
-
-    private fun setupRecyclerView() {
-        binding.rvSales.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = ProductAdapter()
         }
     }
 

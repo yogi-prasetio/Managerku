@@ -30,9 +30,7 @@ class DashboardFragment : Fragment(){
             binding.tvProductCount.text = it.size.toString()
         })
 
-        viewModel.getAllSales()?.observe(viewLifecycleOwner, {
-            binding.tvSalesCount.text = it.size.toString()
-        })
+        binding.tvSalesCount.text = viewModel.getAllSales().toString()
 
         binding.product.setOnClickListener {
             Intent(context, ProductFragment::class.java).also {

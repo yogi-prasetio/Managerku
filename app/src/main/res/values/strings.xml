@@ -28,4 +28,6 @@
     <string name="add_product">Add Product</string>
     <string name="add_sales">Add Sales</string>
     <string name="sales_count">Sales Count</string>
+    <string name="sales_detail">Sales Detail</string>
+    <string name="version">1.0</string>
 </resources>

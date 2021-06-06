@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.bangkit.capstone.managerku.data.local.entity.ProductEntity
-import com.bangkit.capstone.managerku.data.local.entity.SalesEntity
 import com.bangkit.capstone.managerku.data.local.room.ManagerkuDao
 import com.bangkit.capstone.managerku.data.local.room.ManagerkuDatabase
 
@@ -21,7 +20,7 @@ class DashboardViewModel  (application: Application): AndroidViewModel(applicati
         return dataDao?.getProduct()
     }
 
-    fun getAllSales(): LiveData<List<SalesEntity>>? {
-        return dataDao?.getSales()
+    fun getAllSales(): Int? {
+        return dataDao?.getSalesCount()
     }
 }

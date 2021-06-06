@@ -1,42 +1,18 @@
 package com.bangkit.capstone.managerku.ui.content.sales
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.bangkit.capstone.managerku.data.local.entity.ProductEntity
-import com.bangkit.capstone.managerku.data.local.entity.SalesEntity
-import com.bangkit.capstone.managerku.data.local.room.ManagerkuDao
-import com.bangkit.capstone.managerku.data.local.room.ManagerkuDatabase
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import androidx.lifecycle.ViewModel
+import com.bangkit.capstone.managerku.data.Repository
+import com.bangkit.capstone.managerku.data.local.entity.DataEntity
 
-class SalesViewModel (application: Application): AndroidViewModel(application) {
-    private var dataDao: ManagerkuDao? = null
-    private var dataDb: ManagerkuDatabase?
+class SalesViewModel (val repo: Repository): ViewModel() {
 
-    init {
-        dataDb = ManagerkuDatabase.getInstance(application)
-        dataDao = dataDb?.managerkuDao()
+    fun getAllSales(): LiveData<List<DataEntity>>? {
+        return repo.getSales()
     }
 
-    fun getAllSales(): LiveData<List<SalesEntity>>? {
-        return dataDao?.getSales()
+    fun getProduct(): List<String> {
+        return repo.getProductName()
     }
 
-    fun getProduct(): LiveData<List<ProductEntity>>? {
-        return dataDao?.getProduct()
-    }
-
-    fun addSales(id: Int, productId: Int, qty: Int, tanggal: String) {
-        CoroutineScope(Dispatchers.IO).launch {
-            val data = SalesEntity(
-                id,
-                productId,
-                qty,
-                tanggal
-            )
-            dataDao?.addSales(data)
-        }
-    }
 }
