@@ -1,21 +1,23 @@
 package com.bangkit.capstone.managerku.ui.content.sales
 
 import android.app.DatePickerDialog
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.bangkit.capstone.managerku.R
 import com.bangkit.capstone.managerku.data.Repository
-import com.bangkit.capstone.managerku.data.local.entity.SalesEntity
 import com.bangkit.capstone.managerku.data.local.room.ManagerkuDatabase
 import com.bangkit.capstone.managerku.databinding.ActivityAddSalesBinding
+import com.bangkit.capstone.managerku.ui.home.MainActivity
 import com.bangkit.capstone.managerku.viewmodel.ViewModelFactory
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -59,13 +61,7 @@ class AddSalesActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         binding.edDate.setOnClickListener { showDateDialog() }
 
         binding.btnSubmit.setOnClickListener {
-            val qty = binding.edQty.text.toString().toInt()
-            val date = binding.edDate.text.toString()
-            CoroutineScope(Dispatchers.IO).launch {
-                val sales = SalesEntity(taskId, productId, qty, date)
-                database.managerkuDao().addSales(sales)
-            }
-            Intent(this, SalesFragment::class.java).also { startActivity(it) }
+            addSales()
         }
     }
 
@@ -77,6 +73,21 @@ class AddSalesActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) { }
+
+    private fun addSales(){
+        val dialog = Dialog(this)
+        val qty = binding.edQty.text.toString().toInt()
+        val date = binding.edDate.text.toString()
+        viewModel.addSales(taskId, productId, qty, date)
+        dialog.setContentView(R.layout.add_success)
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val dialogButton = dialog.findViewById<Button>(R.id.success_button)
+        dialogButton.setOnClickListener {
+            Intent(this, MainActivity::class.java).also { startActivity(it) }
+        }
+        dialog.show()
+    }
 
     private fun showDateDialog() {
         val newCalendar: Calendar = Calendar.getInstance()

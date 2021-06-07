@@ -10,4 +10,8 @@ class ProductViewModel (val repo: Repository): ViewModel() {
     fun getProduct(): LiveData<List<ProductEntity>>?{
         return repo.getProduct()
     }
+
+    fun addProduct(id: Int, name: String, price: Int){
+        return repo.addProduct(id, name, price)
+    }
 }

@@ -36,7 +36,7 @@ class SalesAdapter: RecyclerView.Adapter<SalesAdapter.SalesViewHolder>() {
         fun bind(data: DataEntity) {
             with(binding) {
                 tvDataTitle.text = data.date
-                tvDataPrice.text = data.qty.toString()
+                tvDataDesc.text = data.qty.toString()
 
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, DetailSalesActivity::class.java)

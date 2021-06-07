@@ -39,11 +39,10 @@ class ProductFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setHasOptionsMenu(true)
+
         database = context?.let { ManagerkuDatabase.getInstance(it) }!!
         val repo = Repository(database)
         val factory = ViewModelFactory(repo)
-
-        setupRecyclerView()
 
         if (activity != null) {
             val viewModel = ViewModelProvider(this,  factory)[ProductViewModel::class.java]
@@ -51,11 +50,17 @@ class ProductFragment : Fragment() {
 
             viewModel.getProduct()?.observe(viewLifecycleOwner, {
                 if (it!=null) {
-                    productAdapter.setProduct(it)
-                } else {
-                    binding.rvProduct.visibility = View.GONE
-                    binding.notifEmpty.visibility = View.VISIBLE
-                    binding.notifEmpty.contentDescription = resources.getString(R.string.product_empty)
+                    binding.rvProduct.adapter?.let { adapter ->
+                        when (adapter) {
+                            is ProductAdapter -> {
+                                if(it.isNullOrEmpty()){
+                                    emptyData()
+                                } else {
+                                    productAdapter.setProduct(it)
+                                }
+                            }
+                        }
+                    }
                 }
             })
 
@@ -67,10 +72,11 @@ class ProductFragment : Fragment() {
         }
     }
 
-    private fun setupRecyclerView() {
-        binding.rvProduct.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = ProductAdapter()
+    private fun emptyData() {
+        binding.apply {
+            rvProduct.visibility = View.GONE
+            notifEmpty.visibility = View.VISIBLE
+            notifEmpty.contentDescription = resources.getString(R.string.product_empty)
         }
     }
 

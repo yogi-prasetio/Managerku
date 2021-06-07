@@ -32,4 +32,6 @@
     <string name="version" translatable="false">1.0</string>
     <string name="product_id">Product id:</string>
     <string name="sold">Sold:</string>
+    <string name="data_added_successfully">Data added successfully!</string>
+    <string name="ok" translatable="false">OK</string>
 </resources>

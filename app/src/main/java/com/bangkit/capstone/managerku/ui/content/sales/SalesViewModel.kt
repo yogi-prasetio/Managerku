@@ -15,4 +15,7 @@ class SalesViewModel (val repo: Repository): ViewModel() {
         return repo.getProductName()
     }
 
+    fun addSales(id: Int, productId: Int, qty: Int, date: String){
+        return repo.addSales(id, productId, qty, date)
+    }
 }

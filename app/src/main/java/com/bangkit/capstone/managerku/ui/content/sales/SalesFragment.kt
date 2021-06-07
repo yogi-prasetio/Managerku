@@ -49,9 +49,17 @@ class SalesFragment : Fragment() {
 
             viewModel.getAllSales()?.observe(viewLifecycleOwner, {
                 if (it!=null) {
-                    salesAdapter.setSales(it)
-                } else {
-                    emptyData()
+                    binding.rvSales.adapter?.let { adapter ->
+                        when (adapter) {
+                            is SalesAdapter -> {
+                                if(it.isNullOrEmpty()){
+                                    emptyData()
+                                } else {
+                                    salesAdapter.setSales(it)
+                                }
+                            }
+                        }
+                    }
                 }
             })
 

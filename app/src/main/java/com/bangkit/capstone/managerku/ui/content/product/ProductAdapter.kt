@@ -34,7 +34,7 @@ class ProductAdapter: RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
         fun bind(data: ProductEntity) {
             with(binding) {
                 tvDataTitle.text = data.name
-                tvDataPrice.text = "Rp." + data.price.toString()
+                tvDataDesc.text = "Rp." + data.price.toString()
             }
         }
     }

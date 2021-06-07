@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="slogan">Simpel dan mudah Digunakan</string>
+    <string name="slogan">Simpel dan mudah digunakan</string>
     <string name="product_empty">Tidak ada produk!</string>
     <string name="sales_empty">Tidak ada penjualan!</string>
     <string name="product_name">Nama Produk</string>
@@ -31,4 +31,5 @@
     <string name="sales_detail">Detail Penjualan</string>
     <string name="product_id">"Id produk: "</string>
     <string name="sold">"Terjual: "</string>
+    <string name="data_added_successfully">Data berhasil ditambahkan!</string>
 </resources>

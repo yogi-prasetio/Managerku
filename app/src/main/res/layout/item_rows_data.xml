@@ -33,7 +33,7 @@
             tools:ignore="RtlSymmetry" />
 
         <TextView
-            android:id="@+id/tv_data_price"
+            android:id="@+id/tv_data_desc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"

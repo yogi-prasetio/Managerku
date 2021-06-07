@@ -13,7 +13,7 @@ import com.bangkit.capstone.managerku.data.local.entity.SalesEntity
 interface ManagerkuDao {
     //product
     @Insert(onConflict = OnConflictStrategy.REPLACE, entity = ProductEntity::class)
-    suspend fun addProduct(product: ProductEntity)
+    fun addProduct(product: ProductEntity)
 
     @Query("SELECT * FROM tbl_product")
     fun getProduct(): LiveData<List<ProductEntity>>
@@ -25,7 +25,7 @@ interface ManagerkuDao {
     fun getIdByProductName(name: String): Int
 
     @Query("SELECT name FROM tbl_product WHERE id_product = :productId")
-    fun getProductById(productId: Int): Int
+    fun getProductById(productId: Int): String
 
     //sales
     @Insert(onConflict = OnConflictStrategy.REPLACE, entity = SalesEntity::class)
