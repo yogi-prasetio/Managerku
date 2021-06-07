@@ -9,7 +9,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.bangkit.capstone.managerku.data.local.entity.ProductEntity
 import com.bangkit.capstone.managerku.data.local.entity.SalesEntity
 
-@Database(entities = [ProductEntity::class, SalesEntity::class], version = 4, exportSchema = false)
+@Database(entities = [ProductEntity::class, SalesEntity::class], version = 2, exportSchema = false)
 abstract class ManagerkuDatabase : RoomDatabase() {
     abstract fun managerkuDao(): ManagerkuDao
 
@@ -19,7 +19,7 @@ abstract class ManagerkuDatabase : RoomDatabase() {
         private var INSTANCE: ManagerkuDatabase? = null
 
         val MIGRATION_1_2: Migration by lazy {
-            object : Migration(3,4) {
+            object : Migration(1,2) {
                 override fun migrate(database: SupportSQLiteDatabase) { }
             }
         }

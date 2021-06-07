@@ -32,7 +32,6 @@ class AddProductActivity : AppCompatActivity() {
         val repo = Repository(database)
         val factory = ViewModelFactory(repo)
 
-
         viewModel = ViewModelProvider(this, factory)[ProductViewModel::class.java]
         binding.btnSubmit.setOnClickListener {
             addProduct()
@@ -43,7 +42,9 @@ class AddProductActivity : AppCompatActivity() {
         val dialog = Dialog(this)
         val name = binding.edName.text.toString()
         val price = binding.edPrice.text.toString().toInt()
-        viewModel.addProduct(taskId, name, price)
+        val stok = binding.edStok.text.toString().toInt()
+
+        viewModel.addProduct(taskId, name, price, stok)
         dialog.setContentView(R.layout.add_success)
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 

@@ -17,5 +17,9 @@ data class ProductEntity(
 
         @NonNull
         @ColumnInfo(name = "price")
-        val price: Int
+        val price: Int,
+
+        @NonNull
+        @ColumnInfo(name = "stok")
+        val stok: Int
 )

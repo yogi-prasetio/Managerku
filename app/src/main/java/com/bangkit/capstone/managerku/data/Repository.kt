@@ -23,9 +23,9 @@ class Repository (val db: ManagerkuDatabase) {
         return db.managerkuDao().getProductName()
     }
 
-    fun addProduct(id: Int, name: String, price: Int) {
+    fun addProduct(id: Int, name: String, price: Int, stok: Int) {
         CoroutineScope(Dispatchers.IO).launch {
-            val product = ProductEntity(id, name, price)
+            val product = ProductEntity(id, name, price, stok)
             db.managerkuDao().addProduct(product)
         }
     }

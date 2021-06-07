@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.bangkit.capstone.managerku.R
-import com.bangkit.capstone.managerku.ui.home.MainActivity
+import com.bangkit.capstone.managerku.ui.content.login.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,7 +13,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler(mainLooper).postDelayed({
-            Intent(this, MainActivity::class.java).also { startActivity(it) }
+            Intent(this, LoginActivity::class.java).also { startActivity(it) }
             finish()
         }, 2500 )
     }
