@@ -53,6 +53,7 @@ class ProductFragment : Fragment() {
                 if (it!=null) {
                     productAdapter.setProduct(it)
                 } else {
+                    binding.rvProduct.visibility = View.GONE
                     binding.notifEmpty.visibility = View.VISIBLE
                     binding.notifEmpty.contentDescription = resources.getString(R.string.product_empty)
                 }

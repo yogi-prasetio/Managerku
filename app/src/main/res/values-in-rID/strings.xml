@@ -3,7 +3,7 @@
     <string name="slogan">Simpel dan mudah Digunakan</string>
     <string name="product_empty">Tidak ada produk!</string>
     <string name="sales_empty">Tidak ada penjualan!</string>
-    <string name="product_name">Nama Product</string>
+    <string name="product_name">Nama Produk</string>
     <string name="save">SIMPAN</string>
     <string name="price">Harga</string>
     <string name="add_data">Tambah Data</string>
@@ -29,4 +29,6 @@
     <string name="add_sales">Tambah Penjualan</string>
     <string name="sales_count">Total Penjualan</string>
     <string name="sales_detail">Detail Penjualan</string>
+    <string name="product_id">"Id produk: "</string>
+    <string name="sold">"Terjual: "</string>
 </resources>

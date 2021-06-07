@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-//    id 'com.google.gms.google-services'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -41,9 +41,9 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.core:core-ktx:$coreVersion"
 
-//    //firebase
-//    implementation platform('com.google.firebase:firebase-bom:28.0.1')
-//    implementation 'com.google.firebase:firebase-analytics-ktx'
+    //firebse
+    implementation platform('com.google.firebase:firebase-bom:28.0.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     //ui
     implementation "androidx.appcompat:appcompat:$appCompatVersion"

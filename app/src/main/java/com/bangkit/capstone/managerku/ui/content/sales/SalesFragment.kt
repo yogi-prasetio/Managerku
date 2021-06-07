@@ -3,7 +3,6 @@ package com.bangkit.capstone.managerku.ui.content.sales
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import android.view.View.VISIBLE
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -66,8 +65,9 @@ class SalesFragment : Fragment() {
 
     private fun emptyData() {
         binding.apply {
+            binding.rvSales.visibility = View.GONE
             descEmptyState.text = resources.getString(R.string.sales_empty)
-            notifEmpty.visibility = VISIBLE
+            notifEmpty.visibility = View.VISIBLE
         }
     }
 

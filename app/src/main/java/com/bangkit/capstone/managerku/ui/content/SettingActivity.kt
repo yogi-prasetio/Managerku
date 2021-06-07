@@ -36,6 +36,7 @@ class SettingActivity : AppCompatActivity() {
             about.setOnClickListener {
                 myDialog.setContentView(R.layout.about_page)
                 myDialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                myDialog.show()
             }
 
             logout.setOnClickListener {

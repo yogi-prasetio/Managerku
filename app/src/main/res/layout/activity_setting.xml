@@ -27,23 +27,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
-        android:src="@drawable/ic_settings"
+        android:src="@drawable/ic_language"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/change_language"
-        android:layout_width="330dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:gravity="start"
+        android:layout_marginStart="54dp"
         android:text="@string/language_setting"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/icon_language"
         app:layout_constraintStart_toEndOf="@+id/icon_language"
-        app:layout_constraintTop_toTopOf="@id/icon_language"/>
+        app:layout_constraintTop_toTopOf="@id/icon_language" />
 
     <ImageView
         android:id="@+id/icon_info"
@@ -57,11 +56,9 @@
 
     <TextView
         android:id="@+id/about"
-        android:layout_width="330dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:ellipsize="end"
-        android:gravity="start"
+        android:layout_marginStart="54dp"
         android:text="@string/about"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -81,12 +78,10 @@
 
     <TextView
         android:id="@+id/logout"
-        android:layout_width="330dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="54dp"
         android:text="@string/log_out"
-        android:ellipsize="end"
-        android:gravity="start"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/icon_logout"

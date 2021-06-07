@@ -29,5 +29,7 @@
     <string name="add_sales">Add Sales</string>
     <string name="sales_count">Sales Count</string>
     <string name="sales_detail">Sales Detail</string>
-    <string name="version">1.0</string>
+    <string name="version" translatable="false">1.0</string>
+    <string name="product_id">Product id:</string>
+    <string name="sold">Sold:</string>
 </resources>

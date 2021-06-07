@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bangkit.capstone.managerku.R
 import com.bangkit.capstone.managerku.data.local.entity.SalesEntity
 import com.bangkit.capstone.managerku.databinding.ItemRowsDataBinding
 
@@ -33,8 +34,8 @@ class ProductSalesAdapter: RecyclerView.Adapter<ProductSalesAdapter.ProductViewH
         @SuppressLint("WrongConstant", "SetTextI18n")
         fun bind(data: SalesEntity) {
             with(binding) {
-                tvDataTitle.text = "Product Id: "+ data.id_product.toString()
-                tvDataPrice.text = "Sales: "+ data.qty.toString()
+                tvDataTitle.text = itemView.context.getString(R.string.product_id) + data.id_product.toString()
+                tvDataPrice.text = itemView.context.getString(R.string.sold) + data.qty.toString()
             }
         }
     }
