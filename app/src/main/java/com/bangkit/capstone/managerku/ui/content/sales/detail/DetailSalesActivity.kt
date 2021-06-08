@@ -10,7 +10,7 @@ import com.bangkit.capstone.managerku.databinding.ActivityDetailSalesBinding
 
 class DetailSalesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailSalesBinding
-    lateinit var database: ManagerkuDatabase
+    private lateinit var database: ManagerkuDatabase
 
     companion object{
         const val EXTRA_DATA = "extra_data"

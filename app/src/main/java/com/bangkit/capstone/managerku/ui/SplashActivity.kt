@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.bangkit.capstone.managerku.R
-import com.bangkit.capstone.managerku.ui.content.login.LoginActivity
+import com.bangkit.capstone.managerku.ui.content.user.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

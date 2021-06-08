@@ -11,7 +11,7 @@ class ProductViewModel (val repo: Repository): ViewModel() {
         return repo.getProduct()
     }
 
-    fun addProduct(id: Int, name: String, price: Int, stok: Int){
-        return repo.addProduct(id, name, price, stok)
+    fun addProduct(productEntity: ProductEntity){
+        return repo.addProduct(productEntity)
     }
 }

@@ -38,8 +38,8 @@
                 android:name="android.support."
                 android:value="com.bangkit.capstone.managerku.ui.profile.ProfileFragment" />
         </activity>
-        <activity android:name=".ui.content.login.SignUpActivity" />
-        <activity android:name=".ui.content.login.LoginActivity" />
+        <activity android:name=".ui.content.user.SignUpActivity" />
+        <activity android:name=".ui.content.user.LoginActivity" />
         <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

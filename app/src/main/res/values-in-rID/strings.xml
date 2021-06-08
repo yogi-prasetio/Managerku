@@ -15,7 +15,6 @@
     <string name="language_setting">Pengaturan Bahasa</string>
     <string name="financial_management">Manajemen Keuangan</string>
     <string name="what_s_next">Apa selanjutnya?</string>
-    <string name="change_password">Ubah Kata Sandi</string>
     <string name="dashboard">Dashboard</string>
     <string name="product">Produk</string>
     <string name="sales">Penjualan</string>
@@ -29,7 +28,7 @@
     <string name="add_sales">Tambah Penjualan</string>
     <string name="sales_count">Total Penjualan</string>
     <string name="sales_detail">Detail Penjualan</string>
-    <string name="product_id">"Id produk: "</string>
     <string name="sold">"Terjual: "</string>
     <string name="data_added_successfully">Data berhasil ditambahkan!</string>
+    <string name="sign_up_success">Pendaftaran berhasil!</string>
 </resources>

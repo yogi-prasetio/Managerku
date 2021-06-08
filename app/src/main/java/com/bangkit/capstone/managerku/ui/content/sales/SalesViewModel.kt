@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.bangkit.capstone.managerku.data.Repository
 import com.bangkit.capstone.managerku.data.local.entity.DataEntity
+import com.bangkit.capstone.managerku.data.local.entity.SalesEntity
 
 class SalesViewModel (val repo: Repository): ViewModel() {
 
@@ -15,7 +16,7 @@ class SalesViewModel (val repo: Repository): ViewModel() {
         return repo.getProductName()
     }
 
-    fun addSales(id: Int, productId: Int, qty: Int, date: String){
-        return repo.addSales(id, productId, qty, date)
+    fun addSales(salesEntity: SalesEntity){
+        return repo.addSales(salesEntity)
     }
 }

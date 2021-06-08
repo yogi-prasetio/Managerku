@@ -8,8 +8,9 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.bangkit.capstone.managerku.data.local.entity.ProductEntity
 import com.bangkit.capstone.managerku.data.local.entity.SalesEntity
+import com.bangkit.capstone.managerku.data.local.entity.UserEntity
 
-@Database(entities = [ProductEntity::class, SalesEntity::class], version = 2, exportSchema = false)
+@Database(entities = [ProductEntity::class, SalesEntity::class, UserEntity::class], version = 3, exportSchema = false)
 abstract class ManagerkuDatabase : RoomDatabase() {
     abstract fun managerkuDao(): ManagerkuDao
 
@@ -19,7 +20,7 @@ abstract class ManagerkuDatabase : RoomDatabase() {
         private var INSTANCE: ManagerkuDatabase? = null
 
         val MIGRATION_1_2: Migration by lazy {
-            object : Migration(1,2) {
+            object : Migration(2,3) {
                 override fun migrate(database: SupportSQLiteDatabase) { }
             }
         }

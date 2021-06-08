@@ -75,8 +75,8 @@ class ProductFragment : Fragment() {
     private fun emptyData() {
         binding.apply {
             rvProduct.visibility = View.GONE
+            descEmptyState.text = resources.getString(R.string.product_empty)
             notifEmpty.visibility = View.VISIBLE
-            notifEmpty.contentDescription = resources.getString(R.string.product_empty)
         }
     }
 

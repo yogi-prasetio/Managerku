@@ -1,4 +1,4 @@
-package com.bangkit.capstone.managerku.ui.content.product
+package com.bangkit.capstone.managerku.ui.content.user
 
 import android.app.Dialog
 import android.content.Intent
@@ -10,49 +10,49 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bangkit.capstone.managerku.R
 import com.bangkit.capstone.managerku.data.Repository
-import com.bangkit.capstone.managerku.data.local.entity.ProductEntity
+import com.bangkit.capstone.managerku.data.local.entity.UserEntity
 import com.bangkit.capstone.managerku.data.local.room.ManagerkuDatabase
-import com.bangkit.capstone.managerku.databinding.ActivityAddProductBinding
-import com.bangkit.capstone.managerku.ui.home.MainActivity
+import com.bangkit.capstone.managerku.databinding.ActivitySignUpBinding
 import com.bangkit.capstone.managerku.viewmodel.ViewModelFactory
 
-class AddProductActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityAddProductBinding
-    private lateinit var viewModel: ProductViewModel
+class SignUpActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySignUpBinding
+    private lateinit var viewModel: UserViewModel
     private lateinit var database: ManagerkuDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        binding = ActivityAddProductBinding.inflate(layoutInflater)
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.btnLogin.setOnClickListener {
+            Intent(this, LoginActivity::class.java).also { startActivity(it) }
+        }
+
         database = ManagerkuDatabase.getInstance(this)
         val repo = Repository(database)
         val factory = ViewModelFactory(repo)
 
-        viewModel = ViewModelProvider(this, factory)[ProductViewModel::class.java]
-        binding.btnSubmit.setOnClickListener {
-            addProduct()
+        viewModel = ViewModelProvider(this, factory)[UserViewModel::class.java]
+        binding.btnSignup.setOnClickListener {
+            addUser()
         }
     }
 
-    private fun addProduct(){
+    private fun addUser(){
         val dialog = Dialog(this)
         val name = binding.edName.text.toString()
-        val price = binding.edPrice.text.toString().toInt()
-        val stok = binding.edStok.text.toString().toInt()
+        val email = binding.edEmail.text.toString()
+        val password = binding.edPassword.text.toString()
 
-        val product = ProductEntity( name, price, stok)
-        viewModel.addProduct(product)
-        dialog.setContentView(R.layout.add_success)
+        val user = UserEntity(null, name, email, password)
+        viewModel.addUser(user)
+        dialog.setContentView(R.layout.signup_success)
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         val dialogButton = dialog.findViewById<Button>(R.id.success_button)
         dialogButton.setOnClickListener {
-            Intent(this, MainActivity::class.java).also { startActivity(it) }
+            Intent(this, LoginActivity::class.java).also { startActivity(it) }
         }
         dialog.show()
     }

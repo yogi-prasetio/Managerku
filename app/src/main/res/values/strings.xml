@@ -15,7 +15,6 @@
     <string name="language_setting">Language Setting</string>
     <string name="financial_management">Financial Management</string>
     <string name="what_s_next">What\'s next?</string>
-    <string name="change_password">Change Password</string>
     <string name="dashboard">Dashboard</string>
     <string name="product">Product</string>
     <string name="sales">Sales</string>
@@ -30,8 +29,8 @@
     <string name="sales_count">Sales Count</string>
     <string name="sales_detail">Sales Detail</string>
     <string name="version" translatable="false">1.0</string>
-    <string name="product_id">Product id:</string>
     <string name="sold">Sold:</string>
     <string name="data_added_successfully">Data added successfully!</string>
     <string name="ok" translatable="false">OK</string>
+    <string name="sign_up_success">Sign up success!</string>
 </resources>

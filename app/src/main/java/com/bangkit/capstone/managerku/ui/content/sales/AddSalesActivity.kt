@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bangkit.capstone.managerku.R
 import com.bangkit.capstone.managerku.data.Repository
+import com.bangkit.capstone.managerku.data.local.entity.SalesEntity
 import com.bangkit.capstone.managerku.data.local.room.ManagerkuDatabase
 import com.bangkit.capstone.managerku.databinding.ActivityAddSalesBinding
 import com.bangkit.capstone.managerku.ui.home.MainActivity
@@ -59,6 +60,7 @@ class AddSalesActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
 
         dateFormatter = SimpleDateFormat("dd-MM-yyyy", Locale.US)
         binding.edDate.setOnClickListener { showDateDialog() }
+        binding.btnDate.setOnClickListener { showDateDialog() }
 
         binding.btnSubmit.setOnClickListener {
             addSales()
@@ -78,7 +80,9 @@ class AddSalesActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         val dialog = Dialog(this)
         val qty = binding.edQty.text.toString().toInt()
         val date = binding.edDate.text.toString()
-        viewModel.addSales(taskId, productId, qty, date)
+        val sales = SalesEntity( productId, qty, date)
+        viewModel.addSales(sales)
+
         dialog.setContentView(R.layout.add_success)
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 

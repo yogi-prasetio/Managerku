@@ -6,27 +6,37 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bangkit.capstone.managerku.R
+import com.bangkit.capstone.managerku.databinding.ProfileFragmentBinding
 import com.bangkit.capstone.managerku.ui.content.SettingActivity
 
 class ProfileFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = ProfileFragment()
-    }
-
+    private var frgmntBinding: ProfileFragmentBinding? = null
+    private val binding get() = frgmntBinding!!
     private lateinit var viewModel: ProfileViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.profile_fragment, container, false)
+    ): View {
+        frgmntBinding = ProfileFragmentBinding.inflate(layoutInflater, container, false)
+        return frgmntBinding!!.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
         setHasOptionsMenu(true)
+
+//        val email = arguments?.getString("email")
+//        Toast.makeText(context, email, Toast.LENGTH_SHORT).show()
+
+//        val data = arguments
+////        if (data != null) {
+////
+////            val email = data.getString("email")
+////            binding.edEmail.setText(email)
+////            Toast.makeText(context, email, Toast.LENGTH_SHORT).show()
+////        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

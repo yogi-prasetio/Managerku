@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.bangkit.capstone.managerku.data.Repository
 import com.bangkit.capstone.managerku.ui.content.product.ProductViewModel
 import com.bangkit.capstone.managerku.ui.content.sales.SalesViewModel
+import com.bangkit.capstone.managerku.ui.content.user.UserViewModel
 import com.bangkit.capstone.managerku.ui.home.MainViewModel
 
 @Suppress("UNCHECKED_CAST")
@@ -14,6 +15,9 @@ class ViewModelFactory(private val repo: Repository): ViewModelProvider.NewInsta
         return when {
             modelClass.isAssignableFrom(MainViewModel::class.java) -> {
                 MainViewModel() as T
+            }
+            modelClass.isAssignableFrom(UserViewModel::class.java) -> {
+                UserViewModel(repo) as T
             }
             modelClass.isAssignableFrom(ProductViewModel::class.java) -> {
                 ProductViewModel(repo) as T

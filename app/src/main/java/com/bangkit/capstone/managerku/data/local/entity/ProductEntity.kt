@@ -7,19 +7,20 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "tbl_product")
 data class ProductEntity(
-        @PrimaryKey(autoGenerate = true)
-        @ColumnInfo(name = "id_product")
-        val id: Int,
-
         @NonNull
         @ColumnInfo(name = "name")
-        val name: String,
+        var name: String? = null,
 
         @NonNull
         @ColumnInfo(name = "price")
-        val price: Int,
+        var price: Int? = 0,
 
         @NonNull
         @ColumnInfo(name = "stok")
-        val stok: Int
-)
+        var stok: Int? = 0
+) {
+        @PrimaryKey(autoGenerate = true)
+        @ColumnInfo(name = "id_product")
+        var id: Int = 0
+
+}

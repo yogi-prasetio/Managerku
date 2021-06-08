@@ -4,13 +4,13 @@ import androidx.lifecycle.LiveData
 import com.bangkit.capstone.managerku.data.local.entity.DataEntity
 import com.bangkit.capstone.managerku.data.local.entity.ProductEntity
 import com.bangkit.capstone.managerku.data.local.entity.SalesEntity
+import com.bangkit.capstone.managerku.data.local.entity.UserEntity
 import com.bangkit.capstone.managerku.data.local.room.ManagerkuDatabase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class Repository (val db: ManagerkuDatabase) {
-//    private lateinit var product: ProductEntity
     fun getProduct(): LiveData<List<ProductEntity>>{
         return db.managerkuDao().getProduct()
     }
@@ -23,16 +23,24 @@ class Repository (val db: ManagerkuDatabase) {
         return db.managerkuDao().getProductName()
     }
 
-    fun addProduct(id: Int, name: String, price: Int, stok: Int) {
+    fun getUser(email: String, pass: String): List<UserEntity>{
+        return db.managerkuDao().getUser(email, pass)
+    }
+
+    fun addUser(user: UserEntity) {
         CoroutineScope(Dispatchers.IO).launch {
-            val product = ProductEntity(id, name, price, stok)
+            db.managerkuDao().addUser(user)
+        }
+    }
+
+    fun addProduct(product: ProductEntity) {
+        CoroutineScope(Dispatchers.IO).launch {
             db.managerkuDao().addProduct(product)
         }
     }
 
-    fun addSales(id: Int, productId: Int, qty: Int, date: String) {
+    fun addSales(sales: SalesEntity) {
         CoroutineScope(Dispatchers.IO).launch {
-            val sales = SalesEntity(id, productId, qty, date)
             db.managerkuDao().addSales(sales)
         }
     }

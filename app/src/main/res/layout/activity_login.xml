@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.content.login.LoginActivity">
+    tools:context=".ui.content.user.LoginActivity">
 
     <TextView
         android:id="@+id/app_name"
@@ -68,6 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
+                android:inputType="textPassword"
                 android:hint="Password"
                 android:maxLines="1"
                 android:padding="8dp"

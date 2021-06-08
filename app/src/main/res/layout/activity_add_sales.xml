@@ -50,24 +50,37 @@
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ti_date"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <FrameLayout
+        android:id="@+id/frame"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="16dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/ti_qty">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ed_date"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_date"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Date"
-            android:inputType="date"
-            android:maxLines="1"
-            android:padding="8dp"
-            android:textSize="14sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="50dp"
+            android:layout_margin="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Date: dd-MM-yyyy"
+                android:inputType="date"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/btn_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_date" />
+    </FrameLayout>
 
     <Button
         android:id="@+id/btn_submit"
@@ -77,7 +90,7 @@
         android:textSize="14sp"
         android:textStyle="bold"
         android:layout_margin="16dp"
-        app:layout_constraintTop_toBottomOf="@id/ti_date"
+        app:layout_constraintTop_toBottomOf="@id/frame"
         app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

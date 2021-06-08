@@ -36,7 +36,7 @@ class ProductSalesAdapter: RecyclerView.Adapter<ProductSalesAdapter.ProductViewH
         fun bind(data: SalesEntity) {
             with(binding) {
                 val database = ManagerkuDatabase.getInstance(itemView.context)
-                val product_name = database.managerkuDao().getProductById(data.id_product)
+                val product_name = database.managerkuDao().getProductById(data.id_product!!)
 
                 tvDataTitle.text = product_name
                 tvDataDesc.text = itemView.context.getString(R.string.sold) + data.qty.toString()

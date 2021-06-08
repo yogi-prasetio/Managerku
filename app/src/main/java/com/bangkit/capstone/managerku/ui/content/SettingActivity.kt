@@ -9,7 +9,7 @@ import android.provider.Settings
 import androidx.appcompat.app.AppCompatActivity
 import com.bangkit.capstone.managerku.R
 import com.bangkit.capstone.managerku.databinding.ActivitySettingBinding
-import com.bangkit.capstone.managerku.ui.content.login.LoginActivity
+import com.bangkit.capstone.managerku.ui.content.user.LoginActivity
 
 
 class SettingActivity : AppCompatActivity() {
